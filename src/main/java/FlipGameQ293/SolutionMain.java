@@ -1,4 +1,4 @@
-package easy.FlipGameQ293;
+package FlipGameQ293;
 
 public class SolutionMain {
 

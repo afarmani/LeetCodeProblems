@@ -1,4 +1,4 @@
-package easy.DesignHashSetQ705;
+package Q700toQ800.Q705DesignHashSet;
 
 import java.util.*;
 
