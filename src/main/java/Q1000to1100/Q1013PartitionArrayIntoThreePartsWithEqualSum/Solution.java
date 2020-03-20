@@ -8,9 +8,9 @@ public class Solution {
     Map<Integer,Integer> map = new HashMap<>();
     public boolean canThreePartsEqualSum(int[] A) {
         //Linear Time O(n) solution, as inputs increase the time increases linearly.
-        // we are going to set pointers on the left and right of the array and move our way in.
         // first sum all values and divide it by 3, the remainder should be 0.
-        // Division will also give us what value we need to look for when we split the array into 3 parts.
+        // Division will also give us what the equal sum value is, this will be our target.
+        // we will then iterate the first part until we reach our target value, then the second part and finally the third part.
 
         int sumA = Arrays.stream(A).sum();
         if(sumA % 3 !=0){
@@ -29,8 +29,8 @@ public class Solution {
                     if(part2==target){
                         for(int c=a+1; c<A.length; c++){
                             part3=part3+A[c];
-                            //check that iterators a and b do not equal the length of the array.
-                            //if they do then this mean that the pointer did not segment it 3 times.
+                            //check that iterators a and b do not equal the length of the array if they do,
+                            // then this mean that the pointer did not segment the array in 3.
                             if(part3==target && a!=A.length-1 && b!=A.length-1 ){
                                 return true;
                             }
@@ -46,7 +46,7 @@ public class Solution {
 
     public boolean Approach1CanThreePartsEqualSum(int[] A) {
         //Quadratic Time (O(n^2)) this approach was not good because the time to run increases quadratically when the inputs increase
-        //this approach was sitting pointers on the first 2 elements and then iterating over the remaining elements.
+        //this approach was setting pointers on the first 2 elements and then iterating over the remaining elements.
         int val1=0;
         int val2=0;
         int val3=0;
